@@ -1,3 +1,5 @@
+<?php $this->title = Yii::t('app-admin', 'Admin Panel'); ?>
+
 <div class="admin-default-index">
     <h1><?= $this->context->action->uniqueId ?></h1>
     <p>

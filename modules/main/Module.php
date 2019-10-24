@@ -2,6 +2,9 @@
 
 namespace app\modules\main;
 
+use Yii;
+use yii\web\View;
+
 /**
  * main module definition class
  */
@@ -19,7 +22,5 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-
-        // custom initialization code goes here
     }
 }
