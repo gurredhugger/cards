@@ -24,4 +24,6 @@ return [
     'LOGIN_MODAL_HEADER' => 'Вход',
     'LOGIN_FORM_USERNAME_LABEL' => 'Логин, Телефон или Email',
     'LOGIN_FORM_PASSWORD_LABEL' => 'Пароль',
+    'LOGIN_FORM_REMEMBER_ME_LABEL' => 'Запомнить меня',
+    'LOGIN_FORM_VERIFY_CODE_LABEL' => 'Проверочный код',
 ];

@@ -30,9 +30,25 @@ class DefaultController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
-                    'login' => ['post'],
+                    'login' => ['get', 'post'],
                     'signup' => ['post'],
                 ],
+            ],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
     }
@@ -48,17 +64,13 @@ class DefaultController extends Controller
 
     public function actionLogin ()
     {
-        if (!Yii::$app->user->isGuest)
-        {
-            return $this->goHome();
-        }
-
         $model = new LoginForm();
 
-
-        if ($model->load(Yii::$app->request->post()))
+        if (Yii::$app->user->isGuest && $model->load(Yii::$app->request->post()))
         {
-            $model->login();
+
+        } else {
+            return $this->render('login', ['model' => $model]);
         }
 
         return $this->goBack();

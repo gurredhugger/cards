@@ -46,6 +46,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\user\UserActiveRecord',
             'enableAutoLogin' => true,
+            'loginUrl' => ['/login'],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -71,6 +72,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/login' => 'main/default/login'
             ],
         ],
     ],
